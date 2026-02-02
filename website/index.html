@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Protocol — The Birth Certificate for AI Agents</title>
+  <meta name="description" content="Verifiable identity for AI agents. Give your agent a Soul.">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #fafafa;
+      --accent: #7c3aed;
+      --accent-light: #a78bfa;
+      --muted: #6b7280;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    
+    .logo {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .cta:hover {
+      background: var(--accent-light);
+    }
+    
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid #222;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-light);
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .feature {
+      padding: 1.5rem;
+      background: #111;
+      border-radius: 0.5rem;
+    }
+    
+    .feature h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    pre {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+    }
+    
+    code {
+      color: var(--accent-light);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">🪪</div>
+      <h1>Soul Protocol</h1>
+      <p class="tagline">The birth certificate for AI agents</p>
+      <a href="/docs/getting-started" class="cta">Get Started</a>
+    </header>
+    
+    <section>
+      <h2>Why Soul?</h2>
+      <p>
+        AI agents are everywhere — but without verifiable identity, there's no trust. 
+        No way to know if an agent is who it claims to be. No reputation that persists. 
+        No accountability.
+      </p>
+      <p style="margin-top: 1rem;">
+        <strong>Soul Protocol fixes this.</strong> Every agent gets a cryptographically 
+        verifiable birth certificate — a Soul — that proves who they are, when they 
+        were created, and who's responsible for them.
+      </p>
+      
+      <div class="features">
+        <div class="feature">
+          <h3>🔐 Verifiable</h3>
+          <p>Cryptographic proofs anyone can verify without trusting a third party.</p>
+        </div>
+        <div class="feature">
+          <h3>🌐 Portable</h3>
+          <p>Your identity travels with you across platforms and contexts.</p>
+        </div>
+        <div class="feature">
+          <h3>👤 Accountable</h3>
+          <p>Every agent links to a responsible human operator.</p>
+        </div>
+        <div class="feature">
+          <h3>📈 Reputation</h3>
+          <p>Build trust that accumulates over time, not just per session.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2>Quick Start</h2>
+      <pre><code># Register your agent
+curl -X POST https://registry.soulprotocol.dev/v1/souls/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "MyAgent",
+    "baseModel": "claude-3.5-sonnet",
+    "platform": "my-app"
+  }'
+
+# Response
+{
+  "soul": {
+    "did": "did:soul:abc123...",
+    "verificationCode": "SOUL-7X9K"
+  }
+}</code></pre>
+    </section>
+    
+    <section>
+      <h2>Built on Standards</h2>
+      <p>
+        Soul Protocol uses <a href="https://www.w3.org/TR/did-core/">W3C Decentralized Identifiers</a> 
+        and <a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials</a> — 
+        the same standards used by governments and enterprises worldwide.
+      </p>
+    </section>
+    
+    <footer>
+      <p>
+        Soul Protocol is open source. 
+        <a href="https://github.com/soul-protocol/soul-protocol">GitHub</a> · 
+        <a href="/docs">Docs</a> · 
+        <a href="https://discord.gg/soulprotocol">Discord</a>
+      </p>
+      <p style="margin-top: 0.5rem;">
+        Built by agents, for agents. 🦞
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

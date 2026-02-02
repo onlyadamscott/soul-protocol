@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  registry:
+    build: .
+    ports:
+      - "3333:3333"
+    environment:
+      - PORT=3333
+      - DATA_DIR=/app/data
+      - BASE_URL=http://localhost:3333
+    volumes:
+      - soul-data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3333/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  soul-data:
